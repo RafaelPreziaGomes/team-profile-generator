@@ -8,4 +8,4 @@ This was a challenge proposed by UCF in which I was assigned to create a profile
 
 # How to use
 
-In order to run the application run "node index.js" after answering a few question head on to https://localhost:3000 were your webpage will be displayed
+In order to run the application run "node index.js" after answering a few question head on to https://localhost:3000 where your webpage will be displayed
