@@ -1,22 +1,28 @@
 {
-  "name": "team-profile-generator",
+  "name": "c-w10-team-profile-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "## User Story AS A manager   I WANT to generate a webpage that displays my team's basic info   SO THAT I have quick access to their emails and GitHub profiles",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RafaelPreziaGomes/team-profile-generator.git"
+    "url": "git+https://github.com/JoeBarbone/c-w10-team-profile-generator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RafaelPreziaGomes/team-profile-generator/issues"
+    "url": "https://github.com/JoeBarbone/c-w10-team-profile-generator/issues"
   },
-  "homepage": "https://github.com/RafaelPreziaGomes/team-profile-generator#readme"
+  "homepage": "https://github.com/JoeBarbone/c-w10-team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "i": "^0.3.7",
+    "inquirer": "^6.5.2",
+    "npm": "^8.12.2"
+  },
+  "type": "module"
 }
