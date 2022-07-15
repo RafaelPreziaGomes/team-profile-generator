@@ -36,6 +36,7 @@ export default function generateTeam(team) {
         <link rel="stylesheet" href="style.css">
     </head>
     <style>
+
     * {
     font-family: ubuntu;
   }
@@ -43,12 +44,14 @@ export default function generateTeam(team) {
   .bg-blue {
     background-color: rgb(243, 243, 243);
     color: rgb(2, 0, 0);
+    font-family: ubuntu;
   }
   
   .card {
     display: inline-block;
     width: 100%;
     margin: 10px 0;
+    font-family: ubuntu;
   }
   
   h1 {
@@ -57,6 +60,7 @@ export default function generateTeam(team) {
     border-radius: 5px;
     margin: 10px;
     color: white;
+    font-family: ubuntu;
   }
   </style>
     <body>

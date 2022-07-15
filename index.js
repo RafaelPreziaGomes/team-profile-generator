@@ -16,8 +16,8 @@ const loginPrompt = () => {
     {
       type: "list",
       name: "login",
-      message: "Would you like to log in or create an account?",
-      choices: ["Log in", "Create an account"],
+      message: "Would you like to create an account?",
+      choices: [ "Create an account"]
     },
   ]);
 };
@@ -84,21 +84,27 @@ const createFile = (username, password) => {
 
 //  create a function that validates if user's username and password are correct
 const validateUser = (username, password) => {
-  return fs.readFile(`./users/${username}.json`, (err, data) => {
+  // check if there is an error reading the data if so console.log(err);
+  fs.readFile(`./users/${username}.json`, (err, data) => {
     if (err) {
       console.log(err);
     } else {
-      const user = JSON.parse(data);
-      if (user.password === password) {
-        return true;
+      // parse the data into a JSON object
+      const userData = JSON.parse(data);
+      // check if the username and password match the userData
+      if (userData.username === username && userData.password === password) {
+        // if they match, console.log("Welcome!");
+        console.log("Welcome!");
       } else {
-        return false;
+        // if they don't match, console.log("Invalid username or password");
+        console.log("Invalid username or password");
       }
     }
-  });
-};
+  }
+  );
+}
 
-// if user logs in successfully
+    
 
 //  load user website
 const loadWebsite = () => {
@@ -400,36 +406,27 @@ const buildTeam = () => {
 };
 
 function init() {
-  // loginPrompt().then((answers) => {
-  //   console.log(answers);
-  //   if (answers.login == "Log in") {
-  //     loginPrompt2().then((answers) => {
-  //       if ((answers.username, answers.password)) {
-  //         if (validateUser(answers.username, answers.password) === true) {
-  //           console.log("Welcome back!");
-  //           loadWebsite().then(loadWebsite2().then(loadWebsite3()));
-  //         }
-  //         if (validateUser(answers.username, answers.password) === false)
-  //           if (err) {
-  //             //  if error
-  //             console.log("Error there is a problem finding your account");
-  //           }
-
-  //         {
-  //           console.log("Invalid username or password");
-  //         }
-  //       }
-  //     });
-  //   } else {
+  loginPrompt().then((answers) => {
+    if (answers.login == "Log in") {
+      loginPrompt2().then((answers) => {
+        if ((answers.username, answers.password)) {
+          if (validateUser(answers.username, answers.password) === true) {
+            console.log("Welcome back!");
+            loadWebsite().then(loadWebsite2().then(loadWebsite3()));
+          }
+          if (validateUser(answers.username, answers.password) === false)
+            
+            console.log("Invalid username or password");
+          }
+      }
+  )} else {
   loginPrompt3().then((answers) => {
-    if (answers.username && answers.password) {
-      // create file
-      createFile(answers.username, answers.password);
-    }
 
-    //  if file exists
-    if (answers.username && answers.password) getManager();
-  });
+      createFile(answers.username, answers.password);
+      getManager();
+    })
+  }})
 }
+
 
 init();
